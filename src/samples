@@ -1,0 +1,122 @@
+// // @ts-nocheck
+// import React, { useContext, useState } from "react";
+// import parse from "html-react-parser";
+// import Buttons from "../../components/buttons/buttons";
+// import Editor from "./editor";
+// import { EditorContext } from "../../utils/context";
+
+// function EditorPage() {
+//   const [title, setitle] = useState("Add post title");
+//   const { isContent } = useContext(EditorContext);
+
+//   /** Displays Blocks */
+//   const displayBlocks = () => {
+//     return isContent.map((fetchedBlocks, index) => (
+//       <div key={index}>
+//         <article>
+//           {fetchedBlocks.type === "header" ? (
+//             parse(`<h${fetchedBlocks.data.level} className="mb-2 mt-2 font-graphikSemibold text-2xl">
+//                 ${fetchedBlocks.data.text}
+//               </h${fetchedBlocks.data.level}>`)
+//           ) : (
+//             <span />
+//           )}
+//           {fetchedBlocks.type === "paragraph" ? (
+//             parse(`
+//                 <p className="my-2 break-normal break-words">
+//                 ${fetchedBlocks.data.text}
+//                 </p>`)
+//           ) : (
+//             <span />
+//           )}
+//           {fetchedBlocks.type === "list" ? (
+//             <ol className="list-decimal ml-4">
+//               {fetchedBlocks.data.items.map((listItem) =>
+//                 parse(`
+//                     <li>${listItem}</li>
+//                     `),
+//               )}
+//             </ol>
+//           ) : (
+//             <span />
+//           )}
+//           {fetchedBlocks.type === "embed" ? (
+//             <div>
+//               <iframe
+//                 width="100%"
+//                 height="300"
+//                 src={fetchedBlocks.data.embed}
+//                 frameBorder="0"
+//                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+//                 allowFullScreen
+//                 title=" Video"
+//                 className="my-6"
+//               />
+//             </div>
+//           ) : (
+//             <span />
+//           )}
+//           {fetchedBlocks.type === "image" ? (
+//             <div>
+//               <img
+//                 className="my-4"
+//                 src={fetchedBlocks.data.file.url}
+//                 alt="Image"
+//               />
+//               <p className="my-2 text-sm mb-4">{fetchedBlocks.data.caption}</p>
+//             </div>
+//           ) : (
+//             <span />
+//           )}
+//           {fetchedBlocks.type === "quote" ? (
+//             <div className="my-4">
+//               <p className="my-2 italic text-lg font-semibold text-red-400">
+//                 ❛❛ {fetchedBlocks.data.text} ❜❜
+//               </p>
+//               <p className="my-2 text-sm ">- {fetchedBlocks.data.caption}</p>
+//             </div>
+//           ) : (
+//             <span />
+//           )}
+//         </article>
+//       </div>
+//     ));
+//   };
+
+//   return (
+//     <div className="h-screen w-screen flex mt-20 justify-center">
+//       <div className="w-3/5">
+//         <div className="border-[#E7F1E9] border rounded-[4px]">
+//           <div className="h-10 border-[#E7F1E9] border-b  " />
+//           <form id="Editor">
+//             <div className="">
+//               <label htmlFor="Title">
+//                 <input
+//                   className="bg-[#FAFAFA] w-full text-[24px] leading-[36px] outline-none h-[33px] my-6 py-4 px-6 text-gray-800 font-ProximaNovaBold"
+//                   id="Title"
+//                   type="text"
+//                   defaultValue={title}
+//                   placeholder="Add post title"
+//                   onChange={(e) => setitle(e.target.value)}
+//                 />
+//               </label>
+//             </div>
+//             <Editor />
+//           </form>
+//         </div>
+//         <div className="flex justify-end my-4 ">
+//           <Buttons
+//             title="Post"
+//             text="Post"
+//             styling="bg-[#23803D]  w-[62px] h-[35px] text-[14px] leading-[22px] text-white rounded-[4px] text-center font-ProximaNovaSemiBold"
+//             textStyling="text-base"
+//             // onClick={() => handleScroll(50, DownloadRef)}
+//           />
+//         </div>
+//         {isContent && displayBlocks()}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default EditorPage;

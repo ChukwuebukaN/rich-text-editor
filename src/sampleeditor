@@ -1,0 +1,190 @@
+// // @ts-nocheck
+// import React, { useContext, useEffect, useState } from "react";
+// import EditorJS from "@editorjs/editorjs";
+// import Header from "@editorjs/header";
+// import Paragraph from "@editorjs/paragraph";
+// import List from "@editorjs/list";
+// import Underline from "@editorjs/underline";
+// import Image from "@editorjs/image";
+// import Embed from "@editorjs/embed";
+// import LinkTool from "@editorjs/link";
+// import AttachesTool from "@editorjs/attaches";
+// import Quote from "@editorjs/quote";
+// import InlineCode from "@editorjs/inline-code";
+// import SimpleImage from "@editorjs/simple-image";
+// import { EditorContext } from "../../utils/context";
+
+// // const EDITOR_HOLDER_ID = "editorjs";
+
+// function Editor() {
+//   const [isBlocks, setIsBlocks] = useState([]);
+//   const { setIsContent } = useContext(EditorContext);
+//   let editor = { isReady: false };
+//   useEffect(() => {
+//     const ac = new AbortController();
+
+//     console.log("Editor");
+
+//     if (!editor.isReady) {
+//       editor = new EditorJS({
+//         // const editor = new EditorJS({
+//         data: {
+//           time: 1552744582955,
+//           blocks: isBlocks,
+//           version: "2.11.10",
+//         },
+//         holderId: "editorjs",
+//         onReady: () => {
+//           // console.log("Editor.js onReady is ready to work!");
+//         },
+//         onChange: () => {
+//           editor
+//             .save()
+//             .then((outputData) => {
+//               setIsBlocks(outputData.blocks);
+//               setIsContent(outputData.blocks);
+//               console.log("outputData", outputData.blocks);
+//               // dispatch(
+//               //   setEditorJSContent({
+//               //     content,
+//               //   }),
+//               // );
+//             })
+//             .catch((error) => {
+//               // eslint-disable-next-line no-console
+//               console.error("Saving failed: ", error);
+//             });
+//         },
+//         placeholder: "Start typing...",
+//         image: SimpleImage,
+//         tools: {
+//           paragraph: {
+//             class: Paragraph,
+//             inlineToolbar: true,
+//             placeholder: "Type here... ",
+//             shortcut: "CMD+SHIFT+P",
+//           },
+//           header: {
+//             class: Header,
+//             shortcut: "CMD+SHIFT+H",
+//             inlineToolbar: true,
+//             config: {
+//               placeholder: "Title",
+//               levels: [1, 2, 3, 4, 5, 6],
+//               defaultLevel: 2,
+//             },
+//           },
+//           list: {
+//             class: List,
+//             inlineToolbar: true,
+//           },
+//           underline: {
+//             class: Underline,
+//             inlineToolbar: true,
+//           },
+//           inlineCode: {
+//             class: InlineCode,
+//             shortcut: "CMD+SHIFT+M",
+//           },
+//           linkTool: {
+//             class: LinkTool,
+//           },
+//           image: {
+//             class: Image,
+//             inlineToolbar: true,
+//             config: {
+//               uploader: {
+//                 async uploadByFile(file) {
+//                   // const response = await admin
+//                   //   .UploadLessonImage(isLessonId, file)
+//                   //   .then((res) => {
+//                   //     const imageFile = res.data.file.link;
+//                   //     return imageFile;
+//                   //   });
+//                   return {
+//                     success: 1,
+//                     file: {
+//                       url: file,
+//                     },
+//                   };
+//                 },
+//               },
+//             },
+//           },
+//           embed: {
+//             class: Embed,
+//             inlineToolbar: true,
+//             config: {
+//               services: {
+//                 youtube: true,
+//                 vimeo: true,
+//                 twitch: true,
+//                 codepen: true,
+//               },
+//             },
+//           },
+//           attaches: {
+//             class: AttachesTool,
+//             inlineToolbar: true,
+//             config: {
+//               uploader: {
+//                 async uploadByFile(file) {
+//                   // const isFile = await admin
+//                   //   .UploadLessonFile( file)
+//                   //   .then((response) => {
+//                   //     return response.data.file;
+//                   //   });
+//                   return {
+//                     success: 1,
+//                     file: {
+//                       url: file.link,
+//                       size: file.size,
+//                       name: file.name,
+//                       extension: file.type,
+//                       title: "Type attachment title here...",
+//                     },
+//                   };
+//                 },
+//               },
+//             },
+//           },
+//           quote: {
+//             class: Quote,
+//             inlineToolbar: true,
+//             shortcut: "CMD+SHIFT+O",
+//             config: {
+//               quotePlaceholder: "Enter a quote",
+//               captionPlaceholder: "Add a Caption: Quote's author",
+//             },
+//           },
+//         },
+//       });
+//     }
+//     editor.isReady
+//       .then(() => {
+//         // console.log("Editor.js is ready to work!");
+//         /** Do anything you need after editor initialization */
+//       })
+//       .catch((reason) => {
+//         // eslint-disable-next-line no-console
+//         console.error(`Editor.js initialization failed because of ${reason}`);
+//       });
+
+//     return function cleanup() {
+//       ac.abort();
+//     };
+//   }, []);
+
+//   return (
+//     <>
+//       {/* {isBlocks && ( */}
+//       <div
+//         id="editorjs"
+//         className="flex text-base px-8 text-gray-700 leading-tight  font-ProximaNovaRegular"
+//       />
+//       {/* )} */}
+//     </>
+//   );
+// }
+
+// export default Editor;

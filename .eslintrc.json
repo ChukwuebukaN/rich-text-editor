@@ -46,7 +46,7 @@
 				"endOfLine": "auto"
 			}
 		],
-		"no-console": "error",
+		"no-console": "warn",
 		"quotes": ["error", "double"],
 		"semi": ["error", "always"],
 		"import/extensions": [

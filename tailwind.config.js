@@ -5,12 +5,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        graphikBold: "'GraphikBold', serif",
-        graphikLight: "'GraphikLight', serif",
-        graphikMedium: "'GraphikMedium', serif",
-        graphikRegular: "'GraphikRegular', serif",
-        graphikSemibold: "'GraphikSemibold', serif",
-      },
+				proximaNovaThin: "'ProximaNovaThin', serif",
+				ProximaNovaLight: "'ProximaNovaLight', serif",
+				ProximaNovaRegular: "'ProximaNovaRegular', serif",
+				ProximaNovaMedium: "'ProximaNovaMedium', serif",
+				ProximaNovaSemiBold: "'ProximaNovaSemiBold', serif",
+				ProximaNovaBold: "'ProximaNovaBold', serif",
+				ProximaNovaExtraBold: "'ProximaNovaExtraBold', serif",
+				ProximaNovaBlack: "'ProximaNovaBlack', serif",
+			},
       spacing: {
         529: "529px",
       },
